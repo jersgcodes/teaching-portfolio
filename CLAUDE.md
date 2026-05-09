@@ -259,6 +259,13 @@ Tests required for any code per workspace policy. Pre-commit hooks via `.pre-com
 
 ---
 
+## Source material
+
+`sources/` holds reference material that informs portfolio content but is not itself published. Drop notes / transcripts / external course material here when it's worth keeping for future writing. Each file should carry a short header (what it is, source, date captured, intended use).
+
+Currently:
+- `sources/ai-fluency-educators.md` — notes from an Anthropic course on AI Fluency for Educators; informs future `/educators` content and includes a 4D ↔ 5-stage crosswalk
+
 ## ADRs
 
 Six ADRs capture the WHY for the load-bearing decisions:

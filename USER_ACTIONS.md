@@ -4,6 +4,30 @@ After each build session, Claude adds an entry here. Most recent at the top.
 
 ---
 
+## 2026-05-07 — Source material: AI Fluency for Educators
+
+### Built
+- `sources/` directory created (new convention for committed-in reference material that informs portfolio writing but is not itself published)
+- `sources/ai-fluency-educators.md` — notes from an Anthropic course on AI Fluency for Educators, preserved verbatim with a thin frame:
+  - Source attribution and intended-use header
+  - 4D ↔ 5-stage workflow crosswalk explaining how the educator framing maps to our locked taxonomy
+  - Inline portfolio notes flagging where specific concepts could become content (e.g. "AI as perspective-taker" pattern; Teaching Context Document parallel to our project-overview.yaml)
+- Updated `CLAUDE.md` to introduce the `sources/` convention
+
+### Why this matters
+The 4D framework is widely taught (Anthropic's own educator course is a major surface). Our 5-stage workflow uses different vocabulary but maps cleanly. Capturing the crosswalk explicitly means a 4D-trained reader can navigate our portfolio without friction — and we can write educator content that honours both framings.
+
+### Test on your device
+- [ ] Read `sources/ai-fluency-educators.md` — verify the crosswalk feels honest and the inline portfolio notes match your intent
+- [ ] Confirm the 4D ↔ 5-stage mapping (especially Diligence's "split between Document and cross-cutting" framing)
+- [ ] Decide whether the future `/educators` content should be its own collection on growth, or absorbed into existing pages
+
+### Decisions surfaced
+- The Teaching Context Document concept (Lesson 1) is the same shape as our project-overview.yaml — worth name-checking the parallel when we write educator content
+- "Ask AI to act as one of my students" generalises to "act as a sceptical reader / junior dev / regulator" — pattern candidate
+
+---
+
 ## 2026-05-07 — Remaining Tier-2 migrations complete (8 of 8)
 
 ### Built
