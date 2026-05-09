@@ -1,0 +1,72 @@
+# projects.yaml — portfolio registry
+#
+# This is NOT a data store. The data lives in each project's
+# ~/claude/<slug>/project-overview.yaml (workspace standard).
+#
+# This file lists which projects appear in the portfolio and applies
+# editorial overrides on top of project-side metadata.
+#
+# Validator rules:
+#   1. Each `slug` must correspond to a real ~/claude/<slug>/ directory
+#      with a project-overview.yaml that validates against the schema.
+#   2. `visibility_override` (if set) must be MORE restrictive than the
+#      project's declared visibility — never less. Order: public > mentioned > hidden.
+#   3. Tier-1 projects must have lens content at content/projects/<slug>/lenses/
+#      (corporate.md, builder.md, deep.md) before publishing.
+#
+# See ADR 0005 (visibility tiering) and ADR 0006 (workspace standardisation).
+
+projects:
+
+  # ===== Tier 1 — full pages on growth =====
+  # Require hand-written lens content at content/projects/<slug>/lenses/
+  - slug: erp-mapper
+    tier: 1
+  - slug: smebot
+    tier: 1
+  - slug: sg-sme-profiler
+    tier: 1
+  - slug: miles-optimizer
+    tier: 1
+  - slug: news-digest
+    tier: 1
+  - slug: playo
+    tier: 1
+
+  # ===== Tier 2 — mention-only on growth =====
+  # Use project's declared metadata; no hand-written lens content needed.
+  # If project's project-overview.yaml has visibility:public, we override DOWN to mentioned.
+  - slug: claude-orchestrator
+    tier: 2
+  - slug: compare-agent
+    tier: 2
+  - slug: event-radar
+    tier: 2
+  - slug: sme-radar
+    tier: 2
+  - slug: sg-sme-maturity
+    tier: 2
+  - slug: sme-outreach
+    tier: 2
+  - slug: shared
+    tier: 2
+  - slug: policy-lens
+    tier: 2
+
+  # ===== Tier 3 — not in portfolio =====
+  # Listed here for transparency; aggregator skips them.
+  # spending-monitor, investment-analyst, market-intel, nutrilens, wip-next,
+  # moonshot-sme-governance — omitted intentionally.
+
+# Editorial overrides:
+#   visibility_override: <public|mentioned|hidden>  — must be ≤ project's declared visibility
+#   tier_override:       <1|2|3>                    — promote/demote regardless of project state
+#   ordering_hint:       <number>                   — sort order on the projects index
+#   notes:               <string>                   — internal note for the portfolio author
+#
+# Example with overrides:
+# - slug: example-project
+#   tier: 1
+#   visibility_override: mentioned
+#   ordering_hint: 1
+#   notes: "Featured first because it best illustrates the privacy-first thread"

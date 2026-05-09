@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jersgcodes.com/schema/v1/concept.json",
+  "title": "Concept",
+  "description": "A teaching primitive. Examples: 'What is an embedding', 'What is a webhook'.",
+  "type": "object",
+  "required": [
+    "title",
+    "slug",
+    "summary",
+    "visibility",
+    "body",
+    "authors"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "title": { "type": "string", "minLength": 3, "maxLength": 80 },
+    "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$" },
+    "summary": { "type": "string", "minLength": 20, "maxLength": 200 },
+    "visibility": { "type": "string", "enum": ["public", "mentioned", "hidden"] },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$",
+        "description": "Slug references to other concepts a reader should know first."
+      }
+    },
+    "workflow_stages": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["define", "delegate", "direct", "discern", "document"]
+      },
+      "description": "Optional — concepts may not always map to a workflow stage."
+    },
+    "outcomes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["save_time", "improve_quality", "enable_new", "reduce_risk"]
+      },
+      "description": "Optional — concepts may be neutral on outcome."
+    },
+    "related_projects": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$" }
+    },
+    "body": {
+      "type": "string",
+      "minLength": 100,
+      "description": "Markdown content. Should explain in plain English first, then add depth."
+    },
+    "authors": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["role", "by", "when"],
+        "additionalProperties": false,
+        "properties": {
+          "role": { "type": "string", "enum": ["drafted", "reviewed", "edited"] },
+          "by": { "type": "string", "minLength": 2 },
+          "when": { "type": "string", "format": "date" }
+        }
+      }
+    },
+    "last_updated": { "type": "string", "format": "date" }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://jersgcodes.com/schema/v1/taxonomy.json",
+  "id": "workflow-5stage",
+  "name": "5-Stage AI Build Workflow",
+  "description": "Primary teaching axis. The build cycle of AI-assisted work, from problem framing to documentation. Custom framing; conceptually compatible with the academic 4D framework but adds Define and Document as bookends.",
+  "stages": [
+    {
+      "id": "define",
+      "name": "Define",
+      "description": "Frame the problem. Decide what good looks like before involving any AI. Includes scope, success criteria, constraints, and the human's own understanding of the domain.",
+      "examples_link": "/ai-fluency#define"
+    },
+    {
+      "id": "delegate",
+      "name": "Delegate",
+      "description": "Decide what AI does, what stays human. The split is the design choice. Ask: where does AI add value, where does it add risk? Includes choosing the right model, tool, and the boundary of automation.",
+      "examples_link": "/ai-fluency#delegate"
+    },
+    {
+      "id": "direct",
+      "name": "Direct",
+      "description": "Communicate intent. Includes prompt design, examples, constraints, format specifications, and iterative steering. The act of telling AI what to do, well.",
+      "examples_link": "/ai-fluency#direct"
+    },
+    {
+      "id": "discern",
+      "name": "Discern",
+      "description": "Evaluate output. Quality, accuracy, fit, hallucination check, edge cases. Skill-intensive; the place where most AI workflows quietly fail.",
+      "examples_link": "/ai-fluency#discern"
+    },
+    {
+      "id": "document",
+      "name": "Document",
+      "description": "Capture decisions, lessons, attribution. ADRs, postmortems, LEARNINGS files. Closes the loop and makes the next cycle better.",
+      "examples_link": "/ai-fluency#document"
+    }
+  ]
+}

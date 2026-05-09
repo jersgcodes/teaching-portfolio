@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jersgcodes.com/schema/v1/pattern.json",
+  "title": "Pattern",
+  "description": "A recurring architecture motif. Examples: 'LLM router with provider fallback', 'Privacy-first design'.",
+  "type": "object",
+  "required": [
+    "title",
+    "slug",
+    "summary",
+    "visibility",
+    "problem",
+    "solution",
+    "when_to_use",
+    "examples",
+    "workflow_stages",
+    "outcomes",
+    "authors"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "title": { "type": "string", "minLength": 5, "maxLength": 80 },
+    "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$" },
+    "summary": { "type": "string", "minLength": 20, "maxLength": 200 },
+    "visibility": { "type": "string", "enum": ["public", "mentioned", "hidden"] },
+    "problem": {
+      "type": "string",
+      "minLength": 30,
+      "description": "What problem does this pattern solve? Plain-English statement."
+    },
+    "solution": {
+      "type": "string",
+      "minLength": 50,
+      "description": "How the pattern addresses the problem. Markdown."
+    },
+    "when_to_use": {
+      "type": "string",
+      "minLength": 30,
+      "description": "When should a builder reach for this pattern? When should they not?"
+    },
+    "examples": {
+      "type": "array",
+      "minItems": 1,
+      "description": "References to projects that use this pattern.",
+      "items": {
+        "type": "object",
+        "required": ["project", "note"],
+        "additionalProperties": false,
+        "properties": {
+          "project": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$",
+            "description": "Slug reference."
+          },
+          "note": {
+            "type": "string",
+            "minLength": 10,
+            "description": "How this project uses the pattern."
+          }
+        }
+      }
+    },
+    "workflow_stages": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["define", "delegate", "direct", "discern", "document"]
+      }
+    },
+    "outcomes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["save_time", "improve_quality", "enable_new", "reduce_risk"]
+      }
+    },
+    "authors": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["role", "by", "when"],
+        "additionalProperties": false,
+        "properties": {
+          "role": { "type": "string", "enum": ["drafted", "reviewed", "edited"] },
+          "by": { "type": "string", "minLength": 2 },
+          "when": { "type": "string", "format": "date" }
+        }
+      }
+    },
+    "last_updated": { "type": "string", "format": "date" }
+  }
+}

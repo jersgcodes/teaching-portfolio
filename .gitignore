@@ -1,0 +1,31 @@
+# Project-status published by orchestrator wrap-up — gitignored across workspace
+project-status.yaml
+
+# Common ignores
+.DS_Store
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+dist/
+build/
+.cache/
+
+# Python tooling
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+htmlcov/
+.coverage
+*.egg-info/
+.tox/
+
+# Aggregator output (generated from projects.yaml)
+data/projects.json
+data/
+
+# Local config
+.env
+.env.local
+*.local.yaml
+.secrets.baseline

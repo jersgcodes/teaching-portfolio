@@ -1,0 +1,32 @@
+{
+  "$schema": "https://jersgcodes.com/schema/v1/taxonomy.json",
+  "id": "outcomes",
+  "name": "Outcome Categories",
+  "description": "Secondary teaching axis. Corporate-lens entry point. Each project, lesson, and pattern is tagged by what business value it produces.",
+  "outcomes": [
+    {
+      "id": "save_time",
+      "name": "Save time",
+      "description": "Reduces the human hours required for a recurring task. Replaces tedium, accelerates throughput, or compresses cycle time.",
+      "examples_link": "/use-cases#save_time"
+    },
+    {
+      "id": "improve_quality",
+      "name": "Improve quality",
+      "description": "Catches errors, raises consistency, or produces higher-fidelity output than was previously practical at scale.",
+      "examples_link": "/use-cases#improve_quality"
+    },
+    {
+      "id": "enable_new",
+      "name": "Enable new capability",
+      "description": "Unlocks something the team or business could not do before. Not a faster version of an existing process — a different process altogether.",
+      "examples_link": "/use-cases#enable_new"
+    },
+    {
+      "id": "reduce_risk",
+      "name": "Reduce risk",
+      "description": "Lowers exposure to mistakes, compliance failures, security incidents, or knowledge loss. Includes privacy-first design, validation pipelines, and audit trails.",
+      "examples_link": "/use-cases#reduce_risk"
+    }
+  ]
+}

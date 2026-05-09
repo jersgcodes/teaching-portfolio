@@ -1,0 +1,29 @@
+{
+  "$schema": "https://jersgcodes.com/schema/v1/taxonomy.json",
+  "id": "lenses",
+  "name": "Reader Lenses",
+  "description": "Audience-depth selection. Every applicable content item renders all three lenses; readers toggle which to view. Orthogonal to the workflow and outcome axes (those are about what the content IS; lenses are about HOW DEEP the reader wants to go).",
+  "lenses": [
+    {
+      "id": "corporate",
+      "name": "Corporate / Outcome",
+      "description": "For non-technical decision-makers. Frames what the project does for users / business value. Avoids tool names where possible.",
+      "audience": "Friends, family, clients, non-technical colleagues",
+      "depth_level": 1
+    },
+    {
+      "id": "builder",
+      "name": "Builder",
+      "description": "Light-technical. Explains how the project is wired and why key choices were made. Names tools categorically, not by SKU.",
+      "audience": "Aspiring vibe coders, peers exploring similar builds",
+      "depth_level": 2
+    },
+    {
+      "id": "deep",
+      "name": "Deep",
+      "description": "Full technical. Code, architecture decisions, alternatives considered, tradeoffs. Assumes reader wants the engineering substance.",
+      "audience": "Technical practitioners, ADR readers, future-self",
+      "depth_level": 3
+    }
+  ]
+}
