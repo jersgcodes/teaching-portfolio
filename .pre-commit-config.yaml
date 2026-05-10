@@ -54,7 +54,8 @@ repos:
     hooks:
       - id: vulture
         name: vulture dead code check
-        entry: bash -c 'output=$(vulture "$@" --min-confidence 80 2>/dev/null | grep -v "unused import" | head -20); if [ -n "$output" ]; then echo "$output"; echo ""; echo "WARN: Potential dead code found. Review before committing."; exit 1; fi' --
+        entry: |
+          bash -c 'output=$(vulture "$@" --min-confidence 80 2>/dev/null | grep -v "unused import" | head -20); if [ -n "$output" ]; then echo "$output"; echo ""; echo "WARN: Potential dead code found. Review before committing."; exit 1; fi' --
         language: system
         types: [python]
         pass_filenames: true
@@ -64,7 +65,8 @@ repos:
     hooks:
       - id: radon-complexity
         name: radon complexity check
-        entry: bash -c 'output=$(radon cc "$@" -n D -s 2>/dev/null); if [ -n "$output" ]; then echo "$output"; echo "FAIL: Functions with complexity grade D or worse found. Simplify before committing."; exit 1; fi' --
+        entry: |
+          bash -c 'output=$(radon cc "$@" -n D -s 2>/dev/null); if [ -n "$output" ]; then echo "$output"; echo "FAIL: Functions with complexity grade D or worse found. Simplify before committing."; exit 1; fi' --
         language: system
         types: [python]
         pass_filenames: true

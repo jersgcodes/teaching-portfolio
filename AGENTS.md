@@ -126,7 +126,7 @@ authors:
     when: 2026-05-07
 ```
 
-`role` is one of: `drafted`, `reviewed`, `edited`. `by` should be a specific identifier (model name + version for AI; human name for humans). `when` is ISO date.
+`role` is one of: `drafted`, `reviewed`, `edited`. `by` should be a specific identifier — for AI, model name + version (e.g. `Claude Opus 4.7`); for humans, prefer a non-PII handle (e.g. `@jersgcodes`) over a real name, since project-overview.yaml lives in committed source and some projects' PII guards block real names. `when` is ISO date.
 
 This is rendered visibly on every page. Misattribution is a worse failure than no attribution.
 
