@@ -274,6 +274,88 @@ See `CLAUDE.md` for locked architecture and `docs/adr/` for the WHY behind major
 
 ---
 
+## Phase 6 — Personal skill-building (closing Mode 1 gaps)
+
+Six progressive projects that close the gaps between "vibe coder who ships prototypes" and "AI practitioner who can take systems to public-business-grade use." Each project produces a learning artifact that doubles as portfolio content (one LinkedIn post / one long-form / one pattern).
+
+Full roadmap: `docs/learning-roadmap.md`
+
+### Task 26 — Project 1: Harden sg-sme-profiler for team-use bar
+- Status: PENDING
+- Priority: High
+- Description: Take sg-sme-profiler from "works on my machine" to "safe for a small team I trust." Add rate limiting, structured logging, env-var secrets, basic monitoring page, /health endpoint, backup/rollback plan.
+- Skill gap: Production-readiness checklist, secrets, basic ops
+- Output: feature branch + before/after writeup ("Hardening a vibe-coded app for team use")
+- Estimated effort: 1 weekend
+
+### Task 27 — Project 2: Security audit on own project
+- Status: PENDING
+- Priority: High
+- Description: Pick erp-mapper or sme-outreach. Run bandit + pip-audit. Document data flow. Try to break it (bad inputs, prompt injection, very large inputs). Map findings against OWASP Top 10. Write up a "self-audit report."
+- Skill gap: Threat modelling, security posture
+- Output: security report doc + applied fixes
+- Estimated effort: 1 weekend
+
+### Task 28 — Project 3: Multi-user SME tracker (concurrency basics)
+- Status: PENDING
+- Priority: Medium
+- Description: Build a small tool where 3+ officers can add / edit / comment on the same SME records simultaneously. Use PostgreSQL or SQLite-WAL. Handle conflicting edits, optimistic/pessimistic locking. Real-time updates via WebSockets or polling. Test with 3 browser tabs racing.
+- Skill gap: Concurrency, state management, database locks
+- Output: working multi-user tool + "concurrency bugs I didn't see coming" writeup
+- Estimated effort: 2 weekends
+
+### Task 29 — Project 4: Self-hosted service with monitoring
+- Status: PENDING
+- Priority: Medium
+- Description: Deploy one project to a VPS with proper ops: logs aggregated, metrics (Prometheus + Grafana or simpler), alerts on error rate / downtime / cost spike, runbook.md for incident response.
+- Skill gap: Operations, observability, alerting
+- Output: production-monitored service + ops writeup
+- Estimated effort: 2 weekends
+
+### Task 30 — Project 5: Performance optimization of erp-mapper
+- Status: PENDING
+- Priority: Medium
+- Description: Profile erp-mapper end-to-end (cProfile or py-spy). Identify hot paths. Make it meaningfully faster — cache identical inputs, parallelize independent steps, downsize models where adequate, optimize queries. Document before/after benchmarks.
+- Skill gap: Profiling, performance, database internals
+- Output: benchmark report + "performance budgets for AI pipelines" pattern
+- Estimated effort: 2 weekends
+
+### Task 31 — Project 6 (capstone): Full public deployment
+- Status: PENDING
+- Priority: Low
+- Description: Pick one project (public-data-only — sme-outreach lite). Take it all the way: HTTPS / custom domain, CI deployment, backups, status page, user-facing docs, privacy policy + terms, cost monitoring, incident playbook. Handle real users reporting real bugs.
+- Skill gap: End-to-end production deployment, support, real-user cycle
+- Output: live tool + "what it took to make this public" — strongest portfolio piece
+- Estimated effort: Multi-week, ongoing
+
+---
+
+## Phase 7 — Talk-prep deliverables
+
+### Task 32 — Cold-vs-context prompt comparison demo
+- Status: PENDING
+- Priority: High (talk-relevant)
+- Description: Reproducible demo showing same prompt → cold Claude (no workspace context) vs full-context Claude. Captures the "harness is the leverage" lesson visually. Useful for the 15-min talk + as standalone content.
+- Components: (1) Setup recipe — terminal commands + prompts to run, (2) 2-3 captured side-by-side transcripts, (3) Talk slide / handout showing the strongest comparison
+- Output: `docs/demos/cold-vs-context-comparison.md` (setup recipe + transcripts) + slide-ready summary
+- Estimated effort: 1 evening to capture; ongoing to refine
+
+### Task 33 — Pattern: build-vs-buy for SMEs in the vibe-coding era
+- Status: PENDING
+- Priority: Medium
+- Description: Publishable pattern doc capturing the build-vs-buy decision matrix for SME owners now that vibe coding has lowered the build bar. Includes the 10-factor decision table, what vendors still offer, and the honest pitch ("build parts unique to your business; buy where vendors do it better").
+- Output: `content/patterns/build-vs-buy-for-smes.md`
+- Estimated effort: 1 weekend
+
+### Task 34 — Talk artifact: the "5 questions before you build an agent" handout
+- Status: PENDING
+- Priority: Medium
+- Description: One-page handout SMEs can self-screen with before commissioning / building an AI agent. The 5 questions from the talk-prep conversation: (1) What ONE task am I trying to remove? (2) What does it cost today? (3) Could a generic AI tool do this? (4) What's the failure cost? (5) Who maintains it in 3 months?
+- Output: `content/handouts/5-questions-before-ai-agent.md` (plus formatted PDF for talk leave-behind)
+- Estimated effort: 1 evening
+
+---
+
 ## Cross-cutting deferred (post-v1)
 
 - Build-time AI generation (Pattern X2)

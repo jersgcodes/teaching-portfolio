@@ -4,6 +4,61 @@ After each build session, Claude adds an entry here. Most recent at the top.
 
 ---
 
+## 2026-05-13 — Talk-prep deliverables tasked + session conversation stored
+
+### Built
+- `docs/sessions/2026-05-13-talk-prep-conversation.md` — comprehensive notes from the talk-prep conversation (14 sections, ~3 days of thinking). Internal source material; will be distilled into patterns / handouts / posts over time.
+- `TASKS.md` extended with Phase 7 (Talk-prep deliverables): Task 32 (cold-vs-context demo), Task 33 (build-vs-buy pattern), Task 34 (5-questions handout)
+
+### Two crux teaching tensions surfaced and addressed
+1. **Teaching vs copying** — showing examples enables surface mimicry. The detection test: "could the audience apply this to a different problem?" Techniques: show the decision not the output, multiple examples per concept, adversarial framing.
+2. **Vendor displacement** — vibe coding can replace vendors but shouldn't replace all. The honest position is build-vs-buy literacy, with a 10-factor decision matrix. Captured as a pattern candidate (Task 33).
+
+### Why the conversation was stored verbatim
+Most of the thinking isn't ready to be content yet — but it's the raw material that talk slides, patterns, handouts, and LinkedIn posts will be built from. Storing prevents evaporation between sessions.
+
+### Test on your device
+- [ ] Skim `docs/sessions/2026-05-13-talk-prep-conversation.md` — table of contents at the top
+- [ ] Confirm the 14-section organisation captures what matters from the conversation
+- [ ] Decide which sections become content first (recommendation: section 11 "naive SME prompt" + section 13b "build vs buy" — both talk-ready)
+
+### Decisions made this session
+- Conversation captured as `docs/sessions/<date>-<topic>.md` is the new convention for storing long-form session thinking that isn't yet content
+- Build-vs-buy framing becomes a publishable pattern (Task 33)
+- The "5 questions before AI agent" becomes a handout (Task 34)
+- Cold-vs-context demo becomes a talk artifact (Task 32)
+
+---
+
+## 2026-05-13 — Personal skill-building roadmap added
+
+### Built
+- `docs/learning-roadmap.md` — six progressive projects to close gaps between "vibe coder who ships prototypes" and "AI practitioner ready for public-business-grade use"
+- `TASKS.md` extended with Phase 6 (Tasks 26-31, one per project)
+
+### The six skill-building projects
+1. **Harden sg-sme-profiler** — production-readiness scaffolding (1 weekend)
+2. **Security audit on own project** — threat modelling (1 weekend)
+3. **Multi-user SME tracker** — concurrency / state (2 weekends)
+4. **Self-hosted with monitoring** — ops / observability (2 weekends)
+5. **Performance optimization of erp-mapper** — profiling / db internals (2 weekends)
+6. **Full public deployment (capstone)** — end-to-end production (multi-week)
+
+Each project produces a learning artifact (LinkedIn post + long-form + pattern + talk segment) that doubles as portfolio content.
+
+### Why these
+Identified the Mode-1 gaps during conversation: production-readiness scaffolding, security thinking, concurrency, ops, performance, end-to-end production. Most "experts" learn these painfully in production. Doing them deliberately in small projects is faster and produces teaching content.
+
+### Test on your device
+- [ ] Skim `docs/learning-roadmap.md` — push back on any projects that don't fit your goals
+- [ ] Decide whether to start with Project 1 (sg-sme-profiler hardening) or shuffle order based on what's most pressing
+
+### Decisions made this session
+- Reframed "non-coder" positioning as misleading — better to position as "AI-native builder" with specific niche (SG SME digitalisation)
+- Personal skill ladder serves dual purpose: skill-building + content production
+
+---
+
 ## 2026-05-07 — Source material: AI Fluency for Educators
 
 ### Built
